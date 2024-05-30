@@ -1,0 +1,86 @@
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 920px) {
+    .botones{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .btn{
+        margin: .1em;
+    }
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.btn {
+    font-size: 18px;
+}
+.alert-secondary{
+    padding: 0;
+}
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.tarjetas-clases{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+#num-alumnos{
+    width: 50px; 
+    height: 30px; 
+    line-height: 30px; 
+    border-radius: 40px;
+    text-align: center; 
+    font-size:15px; 
+}
+/*#num-alumnos{
+    width: 50px; 
+    height: 30px; 
+    line-height: 30px; 
+    background-color:#8aca69;
+    border-radius: 40px;
+    color:white;
+    text-align: center; 
+    font-size:15px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    ;
+  
+}
+#num-alumnos:hover{
+    background-color:#5b8547;
+}*/
+#efecto{
+    transition: transform 0.3s ease; 
+}
+#efecto:hover{
+    box-shadow: 0 0 10px #749866;
+    transform: scale(1.05) ;
+}
+
+#tu-clase{
+    width: 80px; 
+    height: 30px;
+    line-height: 30px; 
+    background-color:#8aca69;
+    border-radius: 30px;
+    color:white;
+    text-align: center; 
+    font-size:15px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#tu-clase:hover{
+    background-color: #5b8547; 
+    color: #f1f1f1;
+}

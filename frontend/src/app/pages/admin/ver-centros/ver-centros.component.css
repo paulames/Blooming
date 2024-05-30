@@ -1,0 +1,23 @@
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 20px 20px;
+    color: var(--bs-card-color);
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-btn-crear-clase {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.input-group {
+    margin-top: 20px;
+    margin-right: 20px;
+}

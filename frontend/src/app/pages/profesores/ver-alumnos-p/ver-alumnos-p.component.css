@@ -1,0 +1,102 @@
+
+/* Estilo para el contenedor del input */
+.input-group {
+  width: fit-content; 
+  margin-left: auto; 
+}
+
+.buscador {
+  padding: 6px 8px; 
+  border-radius: 5px; 
+  width: 200px;
+  background-color: white;
+}
+
+.buscador:focus {
+  outline: none; 
+  border-color: dodgerblue;
+}
+
+
+.btn-hover {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-hover::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #62d462, #298a25, #62d462);
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-hover:hover::before {
+  transform: scaleX(1);
+}
+
+.bg-danger {
+  background-color: rgb(233, 31, 31) !important;
+}
+.bg-general {
+  background-color: rgb(255, 255, 255) !important;
+  border: 2px solid rgb(0, 0, 0);
+  font-size: 15px;
+  color: black;
+}
+  
+.bg-warning {
+  background-color: rgb(255, 174, 31) !important;
+}
+  
+.bg-success {
+  background-color: green !important;
+}
+#chart1 {
+  width: 540px;
+  height: 400px;
+  margin: 0 auto;
+}
+.body-wrapper > .container-fluid{
+  max-width: 1300px;
+}
+.bg-amarillo{
+  background-color: #dce232;
+}
+.bg-verde1{
+  background-color: #8aca69;
+}
+
+.bg-inicio {
+  background-color: rgb(190, 190, 190) !important;
+}
+.bg-amigos {
+  background-color: rgb(255, 159, 188) !important;
+}
+.bg-familia {
+  background-color: rgb(127, 213, 228) !important;
+}
+.bg-clase {
+  background-color: rgb(160, 152, 236) !important;
+}
+.bg-fuera {
+  background-color: rgb(255, 187, 131) !important;
+}
+.bg-emociones {
+  background-color: rgb(163, 219, 189) !important;
+}
+.arrow{
+  cursor: pointer; 
+  transition: box-shadow 0.3s ease;
+}
+/*.arrow:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}*/

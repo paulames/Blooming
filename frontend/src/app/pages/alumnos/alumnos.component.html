@@ -1,0 +1,23 @@
+  <div class="container background-container">
+    <div class="button-container">
+      <button (click)="adios()" class="salir">Salir</button>
+    </div>
+    <div class="titulo">
+      <h1 *ngIf="aux; else notWelcomeMessage">¡Hola de nuevo {{alumnoData.Nombre}}!</h1>
+      <h2>{{obtenerFechaFormato()}}</h2>
+      <ng-template #notWelcomeMessage>
+          <h1>¡Hola {{alumnoData.Nombre}}! Bienvenido a Blooming</h1>
+      </ng-template>
+    </div>
+    <button id="comenzarBtn" (click)="empezarCuestionario()" class="btn comenzar-btn">Jugar</button>
+  </div>
+  <div class="burbujas">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+ 

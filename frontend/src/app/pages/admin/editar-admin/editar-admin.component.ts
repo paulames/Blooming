@@ -1,0 +1,47 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+import { AdminService } from '../../../services/admins.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+@Component({
+  selector: 'app-editar-admin',
+  templateUrl: './editar-admin.component.html',
+  styleUrl: './editar-admin.component.css'
+})
+export class EditarAdminComponent {
+  
+  constructor(private fb:FormBuilder, private adminService: AdminService, private router: Router){}
+
+  public form = this.fb.group({
+    ID_Admin: [localStorage.getItem('id')],
+    Contraseña: [''],
+    newPassword: [''],
+    newPassword2: ['']
+  });
+
+  cambiarPwd(){
+    if(!this.form.valid){
+      //console.log('Errores en el formulario');
+    }else{
+      this.adminService.updateAdminPwd(this.form.value).subscribe(
+        (response: any) => {
+          Swal.fire({
+            icon: "success",
+            title: "Contraseña cambiada con éxito",
+            showConfirmButton: false,
+            timer: 1500
+          }).then(() => {
+            this.router.navigate(['admin/perfil']);
+          });
+        },
+        (error) => {
+          //console.log(this.form.value.ID_Admin);
+          console.error('Error: ', error.error);
+          Swal.fire(error.error.message);
+        }
+      );
+    }
+  }
+
+}

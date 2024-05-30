@@ -1,0 +1,13 @@
+.btn-custom {
+    width: 200px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+@media only screen and (max-width: 500px) {
+    .btn-custom {
+        width: 130px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

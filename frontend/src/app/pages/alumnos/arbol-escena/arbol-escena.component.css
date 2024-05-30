@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* :host {
+     font-family: 'Montserrat';
+} */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+} */
+@keyframes greenBackgroundAnimation {
+    0% { background-color: #a3dbaa; }
+    25% { background-color: #b4e6a3; }
+    50% { background-color: #c5f1a3; }
+    75% { background-color: #b4e6a3; }
+    100% { background-color: #a3dbaa; }
+}
+
+@keyframes blueBackgroundAnimation {
+    0% { background-color: #a3d1f1; }
+    25% { background-color: #b4dbf6; }
+    50% { background-color: #c5e5fa; }
+    75% { background-color: #b4dbf6; }
+    100% { background-color: #a3d1f1; }
+}
+
+@keyframes redBackgroundAnimation {
+    0% { background-color: #f1bcbc; }
+    25% { background-color: #ddb7b7; }
+    50% { background-color: #fcd5d5; }
+    75% { background-color: #ffdbdb; }
+    100% { background-color: #ecb6b6; }
+}
+
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.683) 3%, transparent 25%), 
+                radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.683) 3%, transparent 25%), 
+                radial-gradient(ellipse at bottom left, rgba(255, 255, 255, 0.683) 3%, transparent 25%), 
+                radial-gradient(ellipse at bottom right, rgba(255, 255, 255, 0.683) 3%, transparent 25%);
+    animation: greenBackgroundAnimation 10s infinite;
+    z-index: -1;
+}
+
+#background.green {
+    animation: greenBackgroundAnimation 10s infinite;
+}
+
+#background.blue {
+    animation: blueBackgroundAnimation 10s infinite;
+}
+
+#background.red {
+    animation: redBackgroundAnimation 10s infinite;
+}
+
+#canvasWebGL {
+    display: block;
+}
+
+.barra-progreso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 70px;
+    pointer-events: none; /* Evita la interacción del ratón */
+    cursor: none;
+}
+
+#progress-bar-container {
+    /* position: absolute; */
+    /* left: 70px; */
+    width: 35px;
+    height: 400px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    display: flex;
+    align-items: flex-end;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 0;
+    border-radius: 15px;
+    transition: height 1s ease;
+    background: linear-gradient(45deg, #68A63C, #8EBF6B, #B8D9A0, #68A63C, #8EBF6B, #B8D9A0);
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+#goal-icon {
+    margin-bottom: 20px;
+    margin-left: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#goal-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #000;
+}
+
+.pregunta {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    text-align: center;
+    font-size: 6vh;
+    font-weight: 900;
+    /* font-family: 'Montserrat'; */
+    color: rgb(0, 0, 0);
+    padding-top: 10px;
+    margin-top: 5vh;
+    pointer-events: none;
+    cursor: none;
+    /* text-shadow: 2px 2px 4px rgb(255, 255, 255); Añade sombra al texto */
+    text-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.1), 
+    0 2px 2px rgba(0, 0, 0, 0.1), 
+    0 3px 3px #68a63cb7, 
+    0 4px 4px #8ebf6ba7, 
+    0 5px 5px #8ebf6b9b;
+}
+
+
+.hover_respuesta {
+    position: absolute;
+    bottom: 0;
+    text-align: center; 
+    font-size: 3.5vh;
+    font-weight: 500;
+    font-family: 'Montserrat';
+    bottom: 15%;
+    margin-bottom: 5vh;
+    pointer-events: none; /* Evita la interacción del ratón */
+    cursor: none;
+}
+
+.respuesta_seleccionada{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* .gravedad-negativa {
+    background-color: red;
+    border-radius: 30px;
+    color: white
+}
+
+.gravedad-neutra {
+    background-color: yellow;
+    border-radius: 30px;
+    color: black
+}
+
+.gravedad-positiva {
+    background-color: green;
+    border-radius: 30px;
+    color: white
+}
+
+.gravedad-muy-positiva {
+    background-color: darkgreen;
+    border-radius: 30px;
+    color: white
+} */
+
+.siguiente {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    padding: 10px 20px;
+    background-color: #68A63C;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 12px #53753d;
+    transition: all 0.4s ease;
+    font-weight: bold;
+}
+
+/* .siguiente:hover {
+    background-color: #87a473;
+} */
+
+.siguiente:active {
+    box-shadow: 0 2px #53753d;
+    transform: translateX(-50%) translateY(3px);
+  }
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.901);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+  }
+
+  .loading-overlay p {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .loading-container {
+    position: relative;
+    width: 120px;  /* Ajusta el tamaño del contenedor al tamaño del spinner */
+    height: 120px; /* Ajusta el tamaño del contenedor al tamaño del spinner */
+  }
+  
+  .loading-spinner {
+    position: absolute;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #68A63C;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .loading-image {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  .contador-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.526);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9998;
+    text-align: center;
+    font-family:'Montserrat';
+  }
+  
+  .contador-overlay p {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    color: black;
+    cursor: none;
+    pointer-events: none;
+  }
+
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* z-index: 9997; */
+}
+
+.jaja {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-right: 20px;
+    padding: 0.5em 1em; 
+    background-color: transparent; 
+    color: #68A63C; 
+    border-radius: 5px;
+    border: 1px solid #68A63C;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.jaja:hover {
+    background-color: #ff5656;
+    border: 1px solid #ffffff;
+    color:rgb(255, 255, 255);
+}
+
+.jaja:active {
+    transform: translateY(2px);
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    gap: 25px;
+    /* font-size: 30px; */
+}
+
+.volver{
+    border-radius: 5px;
+    border: 2px solid #68A63C;
+    padding: 0.5em 1em; 
+    background-color: transparent; 
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.volver:hover{
+    background-color: #68A63C;
+    border: 2px solid white;
+}
+
+.volver:hover svg{
+    fill: white;
+}
+
+.volver svg{
+    width: 70px;
+    height: 70px;
+    fill: #68A63C;
+    transition: fill 0.3s;
+}
+
+.Salir{
+    font-size: 24px;
+    border-radius: 5px;
+    border: 2px solid #fb3d3d;
+    color: #fb3d3d;
+    padding: 0.5em 1em; 
+    background-color: transparent; 
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.Salir:hover{
+    background-color: #fb3d3d;
+    border: 2px solid rgb(255, 255, 255); 
+    color: rgb(255, 255, 255)
+}
+
+.fade-in {
+    animation: fadeIn 0.6s forwards;
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.6s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .verde-palabra{
+    color:#68A63C;
+  }
+  
+
+  
+  

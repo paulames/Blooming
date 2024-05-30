@@ -1,0 +1,23 @@
+.btn-secondary {
+    margin-left: 10px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hidden {
+    display: none;
+}
+
+.container-btn-crear-clase {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.input-group {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
