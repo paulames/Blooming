@@ -12,5 +12,6 @@ Aplicación para el seguimiento emocional de los alumnos en el entorno escolar d
 - **CSS3**
 - **Bootstrap**
 
-### **Frameworks **
+### **Frameworks**
 - **Angular**
+  
