@@ -1,5 +1,7 @@
 # Blooming
 Aplicación para el seguimiento emocional de los alumnos en el entorno escolar de primaria y principios de secundaria.
+Enlace a la presentación del proyecto (minuto 31:38) :
+https://www.youtube.com/watch?v=fuz6Z1IXlxM
 
 ## Tecnologías Utilizadas
 
